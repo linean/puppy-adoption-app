@@ -1,0 +1,82 @@
+[
+  {
+    "image": "https://cdn.pixabay.com/photo/2020/06/30/22/34/dog-5357794__340.jpg",
+    "name": "Grace",
+    "short_description": "• 7 months old \n• friendly, energetic",
+    "long_description": "I'm looking for a new family who will take care of me. I like playing with people and other dogs, I like walking in the park and eating healthy food. I'm very friendly and get along well with other animals.",
+    "preferred_owner_description": "Family with kids and garden or living next to a park or forest. They need to have time to play with me and understand that I have a lot of energy.",
+    "contact_number": "123456789"
+  },
+  {
+    "image": "https://images.dog.ceo/breeds/basenji/n02110806_2157.jpg",
+    "name": "Bibi",
+    "short_description": "• 3 years old \n• sleep lover",
+    "long_description": "I'm looking for a new family who will take care of me. I like playing with people and other dogs, I like walking in the park and eating healthy food. I'm very friendly and get along well with other animals.",
+    "preferred_owner_description": "Family with kids and garden or living next to a park or forest. They need to have time to play with me and understand that I have a lot of energy.",
+    "contact_number": "123456789"
+  },
+  {
+    "image": "https://images.dog.ceo/breeds/keeshond/n02112350_9908.jpg",
+    "name": "Peanut",
+    "short_description": "• 5 years old \n• playful\n• likes other animals",
+    "long_description": "I'm looking for a new family who will take care of me. I like playing with people and other dogs, I like walking in the park and eating healthy food. I'm very friendly and get along well with other animals.",
+    "preferred_owner_description": "Family with kids and garden or living next to a park or forest. They need to have time to play with me and understand that I have a lot of energy.",
+    "contact_number": "123456789"
+  },
+  {
+    "image": "https://images.dog.ceo/breeds/pekinese/n02086079_7235.jpg",
+    "name": "Roger",
+    "short_description": "• 2 years old \n• peaceful and shy",
+    "long_description": "I'm looking for a new family who will take care of me. I like playing with people and other dogs, I like walking in the park and eating healthy food. I'm very friendly and get along well with other animals.",
+    "preferred_owner_description": "Family with kids and garden or living next to a park or forest. They need to have time to play with me and understand that I have a lot of energy.",
+    "contact_number": "123456789"
+  },
+  {
+    "image": "https://images.dog.ceo/breeds/poodle-toy/n02113624_213.jpg",
+    "name": "Daisy",
+    "short_description": "• 1 year old \n• curious, playful",
+    "long_description": "I'm looking for a new family who will take care of me. I like playing with people and other dogs, I like walking in the park and eating healthy food. I'm very friendly and get along well with other animals.",
+    "preferred_owner_description": "Family with kids and garden or living next to a park or forest. They need to have time to play with me and understand that I have a lot of energy.",
+    "contact_number": "123456789"
+  },
+  {
+    "image": "https://images.dog.ceo/breeds/poodle-standard/n02113799_1536.jpg",
+    "name": "Sherlock",
+    "short_description": "• 6 years old \n• majestic, lazy\n• likes brushing",
+    "long_description": "I'm looking for a new family who will take care of me. I like playing with people and other dogs, I like walking in the park and eating healthy food. I'm very friendly and get along well with other animals.",
+    "preferred_owner_description": "Family with kids and garden or living next to a park or forest. They need to have time to play with me and understand that I have a lot of energy.",
+    "contact_number": "123456789"
+  },
+  {
+    "image": "https://images.dog.ceo/breeds/terrier-russell/jack1.jpg",
+    "name": "Cookie",
+    "short_description": "• 3 years old \n• energetic\n• likes sports",
+    "long_description": "I'm looking for a new family who will take care of me. I like playing with people and other dogs, I like walking in the park and eating healthy food. I'm very friendly and get along well with other animals.",
+    "preferred_owner_description": "Family with kids and garden or living next to a park or forest. They need to have time to play with me and understand that I have a lot of energy.",
+    "contact_number": "123456789"
+  },
+  {
+    "image": "https://images.dog.ceo/breeds/ovcharka-caucasian/IMG_20190811_105232.jpg",
+    "name": "Peri",
+    "short_description": "• 6 years old \n• peaceful\n• likes children",
+    "long_description": "I'm looking for a new family who will take care of me. I like playing with people and other dogs, I like walking in the park and eating healthy food. I'm very friendly and get along well with other animals.",
+    "preferred_owner_description": "Family with kids and garden or living next to a park or forest. They need to have time to play with me and understand that I have a lot of energy.",
+    "contact_number": "123456789"
+  },
+  {
+    "image": "https://images.dog.ceo/breeds/briard/n02105251_6206.jpg",
+    "name": "Toffee",
+    "short_description": "• 3 years old \n• friendly\n• likes long walks",
+    "long_description": "I'm looking for a new family who will take care of me. I like playing with people and other dogs, I like walking in the park and eating healthy food. I'm very friendly and get along well with other animals.",
+    "preferred_owner_description": "Family with kids and garden or living next to a park or forest. They need to have time to play with me and understand that I have a lot of energy.",
+    "contact_number": "123456789"
+  },
+  {
+    "image": "https://images.dog.ceo/breeds/schipperke/n02104365_6667.jpg",
+    "name": "Lulu",
+    "short_description": "• 2 years old \n• energetic, playful",
+    "long_description": "I'm looking for a new family who will take care of me. I like playing with people and other dogs, I like walking in the park and eating healthy food. I'm very friendly and get along well with other animals.",
+    "preferred_owner_description": "Family with kids and garden or living next to a park or forest. They need to have time to play with me and understand that I have a lot of energy.",
+    "contact_number": "123456789"
+  }
+]
