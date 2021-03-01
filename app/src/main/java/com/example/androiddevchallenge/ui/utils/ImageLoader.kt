@@ -19,6 +19,7 @@ import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import androidx.annotation.DrawableRes
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -51,7 +52,6 @@ object PreviewImageLoader : ImageLoader {
     }
 }
 
-// TODO: 27.02.2021 Find more efficient solution
 object RemoteImageLoader : ImageLoader {
 
     @Composable
@@ -61,8 +61,9 @@ object RemoteImageLoader : ImageLoader {
     ): Painter {
         val placeholder = painterResource(id = placeholderRes)
         var painter by remember { mutableStateOf(placeholder) }
-        val target = remember {
-            object : Target {
+
+        LaunchedEffect(key1 = url) {
+            val target = object : Target {
                 override fun onBitmapLoaded(bitmap: Bitmap, from: Picasso.LoadedFrom?) {
                     painter = BitmapPainter(bitmap.asImageBitmap())
                 }
@@ -76,12 +77,12 @@ object RemoteImageLoader : ImageLoader {
                     placeHolderDrawable: Drawable?
                 ) = Unit
             }
-        }
 
-        Picasso
-            .get()
-            .load(url)
-            .into(target)
+            Picasso
+                .get()
+                .load(url)
+                .into(target)
+        }
 
         return painter
     }
