@@ -13,6 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+@file:Suppress("FunctionName")
+@file:OptIn(
+    ExperimentalCoilApi::class,
+    ExperimentalAnimationApi::class,
+    ExperimentalFoundationApi::class,
+    ExperimentalSerializationApi::class
+)
+
 package com.example.androiddevchallenge.ui.screen
 
 import android.app.Activity
@@ -21,13 +29,16 @@ import android.net.Uri
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.FloatingActionButton
@@ -42,13 +53,14 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import coil.annotation.ExperimentalCoilApi
+import coil.compose.rememberImagePainter
 import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.data.PreviewPuppy
 import com.example.androiddevchallenge.data.Puppy
 import com.example.androiddevchallenge.ui.theme.MainTheme
 import com.example.androiddevchallenge.ui.theme.typography
-import com.example.androiddevchallenge.ui.utils.ImageLoader
-import com.example.androiddevchallenge.ui.utils.RemoteImageLoader
+import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -117,19 +129,11 @@ private fun PuppyDetailsScreen(
 }
 
 @Composable
-private fun PuppyImage(
-    puppy: Puppy,
-    imageLoader: ImageLoader = RemoteImageLoader,
-) {
-    val image = imageLoader.loadImage(
-        url = puppy.image,
-        placeholderRes = R.drawable.ic_placeholder_paw
-    )
-
+private fun PuppyImage(puppy: Puppy) {
     Image(
-        painter = image,
+        painter = rememberImagePainter(puppy.image),
         contentDescription = "",
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier.fillMaxWidth().height(200.dp),
         contentScale = ContentScale.FillWidth
     )
 }

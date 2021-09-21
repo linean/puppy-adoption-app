@@ -13,6 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+
+@file:Suppress("FunctionName")
+@file:OptIn(
+    ExperimentalCoilApi::class,
+    ExperimentalAnimationApi::class,
+    ExperimentalFoundationApi::class,
+    ExperimentalSerializationApi::class
+)
+
 package com.example.androiddevchallenge.ui.screen
 
 import android.os.Bundle
@@ -60,16 +70,16 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.lifecycleScope
+import coil.annotation.ExperimentalCoilApi
+import coil.compose.rememberImagePainter
 import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.data.PreviewPuppy
 import com.example.androiddevchallenge.data.Puppy
 import com.example.androiddevchallenge.ui.theme.MainTheme
 import com.example.androiddevchallenge.ui.theme.typography
-import com.example.androiddevchallenge.ui.utils.ImageLoader
-import com.example.androiddevchallenge.ui.utils.PreviewImageLoader
-import com.example.androiddevchallenge.ui.utils.RemoteImageLoader
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 
@@ -115,7 +125,6 @@ private fun PuppiesListScreen(
     }
 }
 
-@OptIn(ExperimentalAnimationApi::class, ExperimentalFoundationApi::class)
 @Composable
 private fun PuppiesList(
     puppies: List<Puppy>,
@@ -158,8 +167,7 @@ private fun PuppiesList(
 @Composable
 private fun PuppyListItem(
     puppy: Puppy,
-    onPuppyClick: (Puppy) -> Unit = {},
-    imageLoader: ImageLoader = RemoteImageLoader
+    onPuppyClick: (Puppy) -> Unit = {}
 ) {
     Card(
         elevation = 2.dp,
@@ -168,31 +176,22 @@ private fun PuppyListItem(
             .clickable { onPuppyClick(puppy) }
     ) {
         Column {
-            PuppyImage(puppy, imageLoader)
+            PuppyImage(puppy)
             PuppyDetails(puppy)
         }
     }
 }
 
 @Composable
-private fun PuppyImage(
-    puppy: Puppy,
-    imageLoader: ImageLoader = RemoteImageLoader,
-) {
-    val image = imageLoader.loadImage(
-        url = puppy.image,
-        placeholderRes = R.drawable.ic_placeholder_paw
-    )
-
+private fun PuppyImage(puppy: Puppy) {
     Image(
-        painter = image,
-        contentDescription = "",
+        painter = rememberImagePainter(puppy.image),
+        contentDescription = null,
         modifier = Modifier.height(160.dp),
         contentScale = ContentScale.Crop
     )
 }
 
-@OptIn(ExperimentalAnimationApi::class)
 @Composable
 private fun PuppyDetails(puppy: Puppy) {
     var expanded by remember { mutableStateOf(false) }
@@ -252,11 +251,9 @@ private fun ScrollToTopButton(
     }
 }
 
+
 @Preview("Puppy list item", widthDp = 200, heightDp = 250)
 @Composable
 private fun PreviewPuppyListItem() {
-    PuppyListItem(
-        puppy = PreviewPuppy(),
-        imageLoader = PreviewImageLoader
-    )
+    PuppyListItem(puppy = PreviewPuppy())
 }
